@@ -156,22 +156,25 @@
           <p class="eyebrow">Investor intake</p>
           <h2>Share your interest.</h2>
         </div>
-        <form class="contact-form">
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <select>
+        <form class="contact-form" id="intake-form">
+          <input name="name" type="text" placeholder="Name" />
+          <input name="email" type="email" placeholder="Email" />
+          <select name="role">
             <option>Angel / individual</option>
             <option>VC / fund</option>
             <option>Strategic</option>
             <option>Operator / pilot customer</option>
           </select>
-          <button type="button">Get the investor packet</button>
+          <input name="note" type="text" placeholder="Anything we should know?" />
+          <button type="submit">Get the investor packet</button>
         </form>
+        <p id="form-status" class="form-status"></p>
       </section>
     </main>
 
     <footer>
       <p>Privacy-first. Safety-first. Built to help drivers, not shame them.</p>
     </footer>
+    <script src="app.js"></script>
   </body>
 </html>
