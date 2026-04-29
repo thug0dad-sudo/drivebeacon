@@ -1,4 +1,4 @@
-# Public Safety / Enforcement Track
+# Public Safety / Law Enforcement Track
 
 ## Message
 Use voluntary pilots and safety programs to reduce distracted driving.
@@ -7,7 +7,7 @@ Use voluntary pilots and safety programs to reduce distracted driving.
 - public agencies
 - transportation safety groups
 - school districts
-- enforcement-adjacent safety partners
+- law-enforcement and enforcement-adjacent safety partners
 
 ## Offer
 - pilot deployments
