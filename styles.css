@@ -28,6 +28,8 @@ a:hover { text-decoration: underline; }
 .brand { font-weight: 800; letter-spacing: .03em; }
 .nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
 .hero-grid { grid-template-columns: 1.4fr .8fr; align-items: start; }
+.hero-art { padding: 0; overflow: hidden; }
+.hero-art img { display: block; width: 100%; height: 100%; min-height: 380px; object-fit: cover; }
 .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; color: var(--accent); }
 h1 { font-size: clamp(2.8rem, 6vw, 5.6rem); line-height: .95; margin: 12px 0 16px; }
 h2 { font-size: clamp(1.8rem, 3vw, 3rem); margin: 0; }
@@ -50,6 +52,14 @@ h3 { margin: 0 0 8px; }
 .stats span { color: var(--muted); font-size: .9rem; }
 .panel { padding: 22px; }
 .panel ul { margin: 14px 0 0 18px; color: var(--muted); }
+.marquee { overflow: hidden; margin-top: 28px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: rgba(255,255,255,.03); }
+.marquee-soft { margin-top: 0; }
+.marquee-track { display: flex; width: max-content; gap: 18px; padding: 14px 0; animation: scroll-left 26s linear infinite; }
+.marquee-track.reverse { animation-direction: reverse; }
+.marquee-track span {
+  padding: 8px 14px; border-radius: 999px; border: 1px solid var(--border);
+  background: rgba(255,255,255,.05); color: var(--text); white-space: nowrap;
+}
 .section { padding: 18px 0 30px; }
 .section.alt { padding: 32px 0; }
 .section-head { margin-bottom: 18px; }
@@ -66,6 +76,10 @@ h3 { margin: 0 0 8px; }
 .contact-form input, .contact-form select { width: 100%; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--border); background: rgba(255,255,255,.05); color: var(--text); }
 .contact-form button { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #06101d; }
 footer { padding: 26px 0 48px; text-align: center; color: var(--muted); }
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 @media (max-width: 900px) {
   .hero-grid, .cards, .tracks, .timeline, .contact-form { grid-template-columns: 1fr; }
   .visuals { grid-template-columns: 1fr; }
