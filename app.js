@@ -11,15 +11,20 @@ function setStatus(message, kind = 'info') {
 
 if (form) {
   if (!apiBase) {
-    setStatus('Investor intake backend is not connected yet.', 'info');
-    form.querySelector('button')?.setAttribute('disabled', 'true');
+    setStatus('Pages mode: use the email button below to reach out directly.', 'info');
   }
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     if (!apiBase) {
-      setStatus('Backend not connected yet. Deploy the API and set DRIVEBEACON_API_BASE.', 'error');
+      const data = Object.fromEntries(new FormData(form).entries());
+      const subject = encodeURIComponent('DriveBeacon investor interest');
+      const body = encodeURIComponent(
+        `Name: ${data.name || ''}\nEmail: ${data.email || ''}\nRole: ${data.role || ''}\nNote: ${data.note || ''}`
+      );
+      window.location.href = `mailto:thug0dad@gmail.com?subject=${subject}&body=${body}`;
+      setStatus('Opening your email app...', 'success');
       return;
     }
 
